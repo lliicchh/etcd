@@ -14,6 +14,9 @@ ca:
 	mkdir -p certs
 	$(CFSSL) gencert -initca config/ca-csr.json | $(JSON) -bare certs/ca
 
+infra0 = etcd1
+infra1 = etcd2
+infra2 = etcd3
 req:
 	$(CFSSL) gencert \
 	  -ca certs/ca.pem \
